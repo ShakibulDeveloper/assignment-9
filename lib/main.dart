@@ -92,6 +92,13 @@ class HomeScreenUI extends State<HomeScreenState>{
     }
   }
 
+  //======SNACK_BAR=======
+  void customSnackBar(context, String message){
+   ScaffoldMessenger.of(context).showSnackBar(
+     SnackBar(content: Text(message))
+   );
+  }
+
   @override
   void initState() {
     for(int i=0; i < products.length; i++){
@@ -225,18 +232,18 @@ class HomeScreenUI extends State<HomeScreenState>{
           children: [
             Container(
               width: double.infinity,
-              height: 90,
+              height: 95,
               color: const Color(0xFFF9F9F9),
             ),
             const Positioned(
                 left: 16,
-                top: 4,
+                top: 9,
                 child: Text("Total amount", style:
                 TextStyle(fontSize: 14, color: Colors.grey, fontWeight: FontWeight.w100),)
             ),
             Positioned(
                 right: 16,
-                top: 4,
+                top: 9,
                 child: Text("$totalAmount\$", style: Theme.of(context).textTheme.bodyMedium,),
             ),
             Positioned(
@@ -247,7 +254,9 @@ class HomeScreenUI extends State<HomeScreenState>{
                 width: 100.w,
                 height: 48,
                 child: ElevatedButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      customSnackBar(context, 'Congratulation!');
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
