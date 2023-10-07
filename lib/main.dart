@@ -239,7 +239,7 @@ class HomeScreenUI extends State<HomeScreenState>{
                 left: 16,
                 top: 9,
                 child: Text("Total amount", style:
-                TextStyle(fontSize: 14, color: Colors.grey, fontWeight: FontWeight.w100),)
+                TextStyle(fontSize: 14, color: Colors.grey),)
             ),
             Positioned(
                 right: 16,
